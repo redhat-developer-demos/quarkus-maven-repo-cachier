@@ -1,0 +1,4 @@
+.git
+*.adoc
+.cache
+**/*.log
