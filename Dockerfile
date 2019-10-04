@@ -1,7 +1,7 @@
-FROM quay.io/rhdevelopers/tutorial-tools:0.0.1 as builder
+FROM quay.io/rhdevelopers/tutorial-tools:0.0.2 as builder
 
 ARG MAVEN_MIRROR_URL=http://repo1.maven.org/maven2
-ARG QUARKUS_VERSION=0.21.2
+ARG QUARKUS_VERSION=0.23.2
 
 USER developer
 
