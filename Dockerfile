@@ -16,10 +16,12 @@ RUN cd /tmp \
 
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 
-RUN mkdir -p  /work/volumes/.m2/repository
+RUN mkdir -p  /work/m2repo
 
-COPY --from=builder /home/quarkus/.m2/repository/ /work/volumes/.m2/repository/
+COPY --from=builder /home/quarkus/.m2/repository /work/m2repo
+
+COPY che-entrypoint-run.sh /usr/local/bin
 
 WORKDIR /work/volumes
 
-CMD ["tail","-f","/dev/null"]
+CMD ["/usr/local/bin/che-entrypoint-run.sh"]
